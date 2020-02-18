@@ -1,0 +1,16 @@
+name: javascript
+recipe: lamp
+
+services:
+  chrome:
+    type: compose
+    services:
+      image: registry.gitlab.com/dmore/docker-chrome-headless
+      command: /entrypoint.sh
+      ports:
+        - "9222"
+
+tooling:
+  behat:
+    service: appserver
+    cmd: /app/vendor/bin/behat --stop-on-failure
