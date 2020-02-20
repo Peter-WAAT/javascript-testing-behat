@@ -5,9 +5,8 @@ services:
   chrome:
     type: compose
     services:
-      image: registry.gitlab.com/dmore/docker-chrome-headless
-      # image: quay.io/pantheon-public/build-tools-ci:6.x
-      command: google-chrome --headless --remote-debugging-port=9222 --disable-gpu --remote-debugging-address=0.0.0.0 --no-sandbox --disable-dev-shm-usage
+      image: registry.gitlab.com/dmore/docker-chrome-headless:7.2
+      command: chromium --headless --remote-debugging-port=9222 --disable-gpu --remote-debugging-address=0.0.0.0 --no-sandbox --disable-dev-shm-usage
       ports:
         - '9222'
 
