@@ -6,9 +6,11 @@ services:
     type: compose
     services:
       image: registry.gitlab.com/dmore/docker-chrome-headless:7.2
-      command: chromium --headless --remote-debugging-port=9222 --disable-gpu --remote-debugging-address=0.0.0.0 --no-sandbox --disable-dev-shm-usage
+      command: chromium --headless --remote-debugging-port=9222 --disable-gpu --remote-debugging-address=0.0.0.0 --no-sandbox
       ports:
         - '9222'
+      volumes:
+        - /dev/shm:/dev/shm
 
 tooling:
   behat:
