@@ -9,14 +9,8 @@ default:
     DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
     Behat\MinkExtension:
       base_url: https://en.wikipedia.org/
+      default_session: goutte
+      javascript_session: chrome
       goutte: ~
-      browser_name: chrome
-      default_session: command_line_browser
-      javascript_session: js_enabled_browser
-      sessions:
-        command_line_browser:
-          goutte: ~
-        js_enabled_browser:
-          chrome:
-            api_url: http://localhost:9222
-            validate_certificate: false
+      chrome:
+        api_url: http://chrome:9222

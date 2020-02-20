@@ -6,9 +6,10 @@ services:
     type: compose
     services:
       image: registry.gitlab.com/dmore/docker-chrome-headless
-      command: /entrypoint.sh
+      # image: quay.io/pantheon-public/build-tools-ci:6.x
+      command: google-chrome --headless --remote-debugging-port=9222 --disable-gpu --remote-debugging-address=0.0.0.0 --no-sandbox --disable-dev-shm-usage
       ports:
-        - "9222"
+        - '9222'
 
 tooling:
   behat:
